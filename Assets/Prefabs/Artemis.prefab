@@ -200,4 +200,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1
   runSpeed: 3
-  defaultState: {fileID: 11400000, guid: bb4aba9963387f54d87994cdf164046d, type: 2}
+  defaultState: {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}

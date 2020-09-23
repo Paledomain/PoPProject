@@ -20,6 +20,21 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController Instance { get; private set; }
 
+    public bool Falling { get; private set; }
+    public bool Dead { get; private set; }
+
+    private bool _mirrored = false;
+    public bool Mirrored
+    {
+        get { return _mirrored; }
+        set 
+        { 
+            _mirrored = value;
+            float newXScale = value ? -Mathf.Abs(transform.localScale.x) : Mathf.Abs(transform.localScale.x);
+            transform.localScale = new Vector3(newXScale, transform.localScale.y, transform.localScale.z);
+        }
+    }
+
     private void Start()
     {
         // Setup the singleton
@@ -58,8 +73,19 @@ public class PlayerController : MonoBehaviour
         currentState.StartState(animator);
     }
 
-    internal void ChangeToDefaultState()
+    public void ChangeToDefaultState()
     {
         ChangeState(defaultState);
+    }
+
+    public void Walk(float multiplier)
+    {
+        transform.position += new Vector3(walkSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
+    }
+
+    public void Run(float multiplier)
+    {
+        transform.position += new Vector3(runSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
+
     }
 }

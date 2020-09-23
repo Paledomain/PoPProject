@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-[CreateAssetMenu(fileName = "PlayerState", menuName = "PlayerState/NewState", order = 1)]
-public class PlayerState : ScriptableObject
+
+public abstract class PlayerState : ScriptableObject
 {
     struct KeyBindToState
     {
@@ -40,6 +41,8 @@ public class PlayerState : ScriptableObject
     private float duration = 1.0f;
     [SerializeField]
     private List<string> animatorParameters;
+    [SerializeField]
+    protected bool mirrored;
 
     private List<KeyBindToState> keyBinds;
     protected Animator animator;
@@ -62,8 +65,13 @@ public class PlayerState : ScriptableObject
             keyBinds = keyBindList.OrderByDescending(keyBind => keyBind.keys.Count).ToList();
         }
 
+        PlayerController.Instance.Mirrored = mirrored;
+
         SetAnimatorParameters();
+        CustomStartState();
     }
+
+    protected abstract void CustomStartState();
 
     public void UpdateState()
     {
@@ -88,9 +96,14 @@ public class PlayerState : ScriptableObject
                     return;
                 }
                 PlayerController.Instance.ChangeToDefaultState();
+                return;
             }
         }
+
+        CustomStateUpdate();
     }
+
+    protected abstract void CustomStateUpdate();
 
     private PlayerState FindDesiredNextState()
     {

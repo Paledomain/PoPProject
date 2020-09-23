@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f741b70f69584dc45b9d2268fe1eb021, type: 3}
-  m_Name: Idle
+  m_Script: {fileID: 11500000, guid: 4668d13899cdba44aace6a3e403f44a2, type: 3}
+  m_Name: RunLeft
   m_EditorClassIdentifier: 
   possibleNextStates:
-  - {fileID: 11400000, guid: d7064e42cef3d144e8a96f7f39cd0d0d, type: 2}
-  - {fileID: 11400000, guid: 7ede1b567487ac94da9005213981677c, type: 2}
-  buttons: 
+  - {fileID: 11400000, guid: aa6f4e43f5a8ee141b5383f811f14a79, type: 2}
+  - {fileID: 11400000, guid: 8d9824b9b6fed6c438a744a184319e6e, type: 2}
+  buttons: 00000000
   looping: 1
   duration: 1
   animatorParameters:
-  - Idle
+  - Run
+  mirrored: 1
