@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9159547967805514013
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e2a7df962ce2e4083ef45d94919296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  looping: 1
+  playerState: {fileID: 0}
+  possibleNextStates: []
 --- !u!1102 &-3943607517292960235
 AnimatorState:
   serializedVersion: 5
@@ -34,9 +49,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: PedestrianSpeed
-    m_EventTreshold: 0.9
+  - m_ConditionMode: 1
+    m_ConditionEvent: Walk
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1083152836709388388}
   m_Solo: 0
@@ -86,9 +101,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: PedestrianSpeed
-    m_EventTreshold: 0.9
+  - m_ConditionMode: 1
+    m_ConditionEvent: Idle
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3535340874350576998}
   m_Solo: 0
@@ -112,8 +127,14 @@ AnimatorController:
   m_Name: Artemis
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: PedestrianSpeed
-    m_Type: 1
+  - m_Name: Idle
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Walk
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -175,7 +196,7 @@ AnimatorStateMachine:
     m_Position: {x: 530, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3943607517292960235}
-    m_Position: {x: 270, y: 140, z: 0}
+    m_Position: {x: 520, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
