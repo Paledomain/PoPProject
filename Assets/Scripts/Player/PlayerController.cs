@@ -13,6 +13,13 @@ public class PlayerController : MonoBehaviour
     private float runSpeed = 3.0f;
 
     [SerializeField]
+    private float jumpSpeed = 3.0f;
+
+    [SerializeField]
+    private float crouchSpeed = 1.0f;
+
+
+    [SerializeField]
     private PlayerState defaultState;
     
     private Animator animator;
@@ -87,5 +94,22 @@ public class PlayerController : MonoBehaviour
     {
         transform.position += new Vector3(runSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
 
+    }
+
+    public void HighJump(float multiplier)
+    {
+        transform.position += new Vector3(0.0f, jumpSpeed * Time.deltaTime * multiplier, 0.0f);
+
+    }
+
+    public void LongJump(float multiplier)
+    {
+        transform.position += new Vector3(jumpSpeed * Time.deltaTime * multiplier, jumpSpeed * Time.deltaTime / multiplier, 0.0f);
+
+    }
+
+    public void Crouch(float multiplier)
+    {
+        transform.position += new Vector3(crouchSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
     }
 }

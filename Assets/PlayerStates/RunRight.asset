@@ -15,6 +15,7 @@ MonoBehaviour:
   possibleNextStates:
   - {fileID: 11400000, guid: 7ede1b567487ac94da9005213981677c, type: 2}
   - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
+  - {fileID: 11400000, guid: eb13ff775f813724b9754c4a8cfa6c98, type: 2}
   buttons: 01000000
   looping: 1
   duration: 1
