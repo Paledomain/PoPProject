@@ -9,16 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6978a0d83990e5741923e7db8f9b8781, type: 3}
-  m_Name: JumpUpRight
+  m_Script: {fileID: 11500000, guid: 4f634b2d332f7ba488ef4276647b63e1, type: 3}
+  m_Name: TurnLeft
   m_EditorClassIdentifier: 
   possibleNextStates: []
-  buttons: 02000000
+  buttons: 
   looping: 0
-  duration: 1
-  animationName: Artemis_JumpUp
-  mirrored: 0
-  preparationDuration: 0.3
-  firstAnimDuration: 0.52
-  secondAnimationName: Artemis_JumpUpAir
-  impulse: {x: 39, y: 215}
+  duration: 0.4
+  animationName: Artemis_Idle

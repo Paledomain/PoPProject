@@ -21,7 +21,7 @@ public class TransitionToMoveState : PlayerState
             return;
 
         float movementSpeed = Mathf.SmoothStep(startVelocity, targetSpeed, ElapsedTime / duration);
-        float multiplier = mirrored ? -1.0f : 1.0f;
+        float multiplier = IsMirrored ? -1.0f : 1.0f;
         playerRigidBody.velocity = new Vector3(movementSpeed * multiplier, 0.0f, 0.0f);
     }
 }

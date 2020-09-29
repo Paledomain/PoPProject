@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6e4b9d177e0bd43adebaaa553eb36a, type: 3}
   m_Name: CrouchWalkRight
   m_EditorClassIdentifier: 
-  possibleNextStates: []
+  possibleNextStates:
+  - {fileID: 11400000, guid: eb13ff775f813724b9754c4a8cfa6c98, type: 2}
+  - {fileID: 11400000, guid: 2a4cadb3efcaf0b4d85eb6a2e05e034e, type: 2}
   buttons: 0300000001000000
   looping: 1
   duration: 1
   animationName: Artemis_CrouchWalk
-  mirrored: 0
   movementSpeed: 0.5

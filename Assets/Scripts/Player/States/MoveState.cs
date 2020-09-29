@@ -14,8 +14,10 @@ public class MoveState : PlayerState
 
     protected override void CustomStateUpdate()
     {
-        float multiplier = mirrored ? -1.0f : 1.0f;
-        //PlayerController.Instance.transform.position += new Vector3(movementSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
-        playerRigidBody.velocity = new Vector3(movementSpeed * multiplier, .0f, .0f);
+        if (PlayerController.Instance.Grounded)
+        {
+            float multiplier = IsMirrored ? -1.0f : 1.0f;
+            playerRigidBody.velocity = new Vector3(movementSpeed * multiplier, .0f, .0f);
+        }
     }
 }

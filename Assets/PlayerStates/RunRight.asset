@@ -15,9 +15,9 @@ MonoBehaviour:
   possibleNextStates:
   - {fileID: 11400000, guid: fea394f49ba160b4da5e350145f3b507, type: 2}
   - {fileID: 11400000, guid: 2e38fbfa91d5b9544a25eda3bee151be, type: 2}
+  - {fileID: 11400000, guid: 7ede1b567487ac94da9005213981677c, type: 2}
   buttons: 01000000
   looping: 1
   duration: 1
   animationName: Artemis_Run
-  mirrored: 0
   movementSpeed: 4

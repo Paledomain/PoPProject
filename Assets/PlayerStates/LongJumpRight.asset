@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af675e73651b6d546b75136ed372f83a, type: 3}
   m_Name: LongJumpRight
   m_EditorClassIdentifier: 
-  possibleNextStates: []
+  possibleNextStates:
+  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
   buttons: 0200000001000000
   looping: 0
   duration: 1
   animationName: Artemis_Jump
-  mirrored: 0
   jumpForce: {x: 20, y: 210}

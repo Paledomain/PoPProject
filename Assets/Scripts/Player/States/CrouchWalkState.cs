@@ -15,7 +15,7 @@ public class CrouchWalkState : PlayerState
 
     protected override void CustomStateUpdate()
     {
-        float multiplier = mirrored ? -1.0f : 1.0f;
+        float multiplier = IsMirrored ? -1.0f : 1.0f;
         playerRigidBody.velocity = new Vector3(movementSpeed * multiplier, .0f, .0f);
     }
 }

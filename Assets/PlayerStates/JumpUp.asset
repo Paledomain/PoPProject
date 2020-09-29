@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6978a0d83990e5741923e7db8f9b8781, type: 3}
-  m_Name: JumpUpLeft
+  m_Name: JumpUp
   m_EditorClassIdentifier: 
-  possibleNextStates: []
+  possibleNextStates:
+  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
   buttons: 02000000
   looping: 0
   duration: 1
   animationName: Artemis_JumpUp
-  mirrored: 1
   preparationDuration: 0.3
-  firstAnimDuration: 0.6
+  firstAnimDuration: 0.52
   secondAnimationName: Artemis_JumpUpAir
-  impulse: {x: -39, y: 180}
+  impulse: {x: 39, y: 215}

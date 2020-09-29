@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdda098f4c639c4eb6b653b01d7d350, type: 3}
-  m_Name: IdleLeft
+  m_Script: {fileID: 11500000, guid: 10f1b584bd2770442ae917029e5629dc, type: 3}
+  m_Name: CrouchToIdle
   m_EditorClassIdentifier: 
   possibleNextStates:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
   buttons: 
-  looping: 1
-  duration: 1
-  animationName: Artemis_Idle
-  mirrored: 1
+  looping: 0
+  duration: 0.3
+  animationName: Artemis_CrouchToIdle

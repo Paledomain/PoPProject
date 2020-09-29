@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class PlayerState : ScriptableObject
 {
-    struct KeyBindToState
+    private struct KeyBindToState
     {
         public KeyBindToState(PlayerState stateArg)
         {
@@ -40,25 +40,41 @@ public abstract class PlayerState : ScriptableObject
     protected float duration = 1.0f;
     [SerializeField]
     private string animationName;
-    [SerializeField]
-    protected bool mirrored;
 
     private List<KeyBindToState> keyBinds;
     protected Animator animator;
     private float stateStartTime;
     protected Rigidbody2D playerRigidBody;
-
+    protected bool falling = false;
+    protected PlayerState _previousState;
 
     protected float ElapsedTime
     {
         get { return Time.time - stateStartTime; }
     }
 
-    public void StartState(Animator animatorArg)
+    protected bool IsMirrored
+    {
+        get
+        {
+            return buttons.Contains(GameButton.Left);
+        }
+    }
+
+    protected PlayerState PreviousState
+    {
+        get
+        {
+            return _previousState ? _previousState : null;
+        }
+    }
+
+    public void StartState(Animator animatorArg, PlayerState previousState)
     {
         animator = animatorArg;
         stateStartTime = Time.time;
         playerRigidBody = PlayerController.Instance.GetComponent<Rigidbody2D>();
+        _previousState = previousState;
 
         {
             var keyBindList = new List<KeyBindToState>();
@@ -75,8 +91,6 @@ public abstract class PlayerState : ScriptableObject
             keyBinds = keyBindList.OrderByDescending(keyBind => keyBind.keys.Count).ToList();
         }
 
-        PlayerController.Instance.Mirrored = mirrored;
-
         animator.Play(animationName);
         CustomStartState();
     }
@@ -85,8 +99,13 @@ public abstract class PlayerState : ScriptableObject
 
     public void UpdateState()
     {
-        if (looping)
+        if (looping && !falling)
         {
+            if (!PlayerController.Instance.Grounded)
+            {
+                PlayerController.Instance.ChangeToFallingState();
+                return;
+            }
             PlayerState desiredNextState = FindDesiredNextState();
             if (desiredNextState && desiredNextState != this)
             {
@@ -94,7 +113,7 @@ public abstract class PlayerState : ScriptableObject
                 return;
             }
         }
-        else
+        else if (!looping)
         {
             if (ElapsedTime > duration)
             {
@@ -119,6 +138,11 @@ public abstract class PlayerState : ScriptableObject
     {
     }
 
+    protected virtual bool IgnoreState()
+    {
+        return false;
+    }
+
     private PlayerState FindDesiredNextState()
     {
         if (keyBinds == null)
@@ -126,7 +150,7 @@ public abstract class PlayerState : ScriptableObject
 
         foreach (var keyBind in keyBinds)
         {
-            if (keyBind.AllButtonsDown())
+            if (!keyBind.boundState.IgnoreState() && keyBind.AllButtonsDown())
             {
                 return keyBind.boundState;
             }
@@ -136,10 +160,5 @@ public abstract class PlayerState : ScriptableObject
 
     public void ExitState()
     {
-    }
-
-    protected void PlayStateAnimation()
-    {
-        animator.Play(animationName);
     }
 }

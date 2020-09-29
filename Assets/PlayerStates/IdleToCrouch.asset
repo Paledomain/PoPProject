@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f1b584bd2770442ae917029e5629dc, type: 3}
   m_Name: IdleToCrouch
   m_EditorClassIdentifier: 
-  possibleNextStates: []
-  buttons: 
+  possibleNextStates:
+  - {fileID: 11400000, guid: eb13ff775f813724b9754c4a8cfa6c98, type: 2}
+  - {fileID: 11400000, guid: 2a4cadb3efcaf0b4d85eb6a2e05e034e, type: 2}
+  buttons: 03000000
   looping: 0
-  duration: 1
-  animationName: 
-  mirrored: 0
+  duration: 0.3
+  animationName: Artemis_IdleToCrouch
