@@ -12,13 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4773f4aec05824b8789c767a85c869, type: 3}
   m_Name: WalkLeft
   m_EditorClassIdentifier: 
-  possibleNextStates:
-  - {fileID: 11400000, guid: 24cf3208eec2cca459a25e4fe2892dcf, type: 2}
-  - {fileID: 11400000, guid: 8d9824b9b6fed6c438a744a184319e6e, type: 2}
-  - {fileID: 11400000, guid: d973d5652937acd4aa867dbb5880b7ef, type: 2}
-  buttons: 0000000004000000
+  possibleNextStates: []
+  buttons: 0400000000000000
   looping: 1
   duration: 1
-  animatorParameters:
-  - Walk
+  animationName: Artemis_Walk
   mirrored: 1
+  movementSpeed: 1

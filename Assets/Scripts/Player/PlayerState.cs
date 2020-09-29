@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 
 public abstract class PlayerState : ScriptableObject
@@ -40,7 +39,7 @@ public abstract class PlayerState : ScriptableObject
     [SerializeField, Tooltip("Duration in seconds, used only for un-looping states")]
     private float duration = 1.0f;
     [SerializeField]
-    private List<string> animatorParameters;
+    private string animationName;
     [SerializeField]
     protected bool mirrored;
 
@@ -56,7 +55,10 @@ public abstract class PlayerState : ScriptableObject
         {
             var keyBindList = new List<KeyBindToState>();
             foreach (PlayerState pState in possibleNextStates)
-                keyBindList.Add(new KeyBindToState(pState));
+            {
+                if (pState)
+                    keyBindList.Add(new KeyBindToState(pState));
+            }
 
             if (looping)
                 keyBindList.Add(new KeyBindToState(this));
@@ -67,7 +69,7 @@ public abstract class PlayerState : ScriptableObject
 
         PlayerController.Instance.Mirrored = mirrored;
 
-        SetAnimatorParameters();
+        animator.Play(animationName);
         CustomStartState();
     }
 
@@ -122,18 +124,10 @@ public abstract class PlayerState : ScriptableObject
 
     public void ExitState()
     {
-        ResetAnimatorParameters();
     }
 
-    protected void SetAnimatorParameters()
+    protected void PlayStateAnimation()
     {
-        foreach (string param in animatorParameters)
-            animator.SetBool(param, true);
-    }
-
-    protected void ResetAnimatorParameters()
-    {
-        foreach (string param in animatorParameters)
-            animator.SetBool(param, false);
+        animator.Play(animationName);
     }
 }

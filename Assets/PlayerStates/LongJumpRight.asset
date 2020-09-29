@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4773f4aec05824b8789c767a85c869, type: 3}
-  m_Name: RunLeft
+  m_Script: {fileID: 11500000, guid: af675e73651b6d546b75136ed372f83a, type: 3}
+  m_Name: LongJumpRight
   m_EditorClassIdentifier: 
   possibleNextStates: []
-  buttons: 00000000
-  looping: 1
+  buttons: 0200000001000000
+  looping: 0
   duration: 1
-  animationName: Artemis_Run
-  mirrored: 1
-  movementSpeed: 4
+  animationName: Artemis_Jump
+  mirrored: 0

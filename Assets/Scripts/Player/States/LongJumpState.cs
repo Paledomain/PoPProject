@@ -11,6 +11,5 @@ public class LongJumpState : PlayerState
 
     protected override void CustomStateUpdate()
     {
-        PlayerController.Instance.LongJump(mirrored ? -1.0f : 1.0f);
     }
 }

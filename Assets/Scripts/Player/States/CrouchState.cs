@@ -11,6 +11,5 @@ public class CrouchState : PlayerState
 
     protected override void CustomStateUpdate()
     {
-        PlayerController.Instance.Crouch(mirrored ? -1.0f : 1.0f);
     }
 }

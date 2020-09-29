@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4773f4aec05824b8789c767a85c869, type: 3}
-  m_Name: RunLeft
+  m_Script: {fileID: 11500000, guid: 343714c8cae0e6c44a6653da4308aac9, type: 3}
+  m_Name: JumpUpRight
   m_EditorClassIdentifier: 
   possibleNextStates: []
-  buttons: 00000000
-  looping: 1
+  buttons: 02000000
+  looping: 0
   duration: 1
-  animationName: Artemis_Run
-  mirrored: 1
-  movementSpeed: 4
+  animationName: Artemis_JumpUp
+  mirrored: 0

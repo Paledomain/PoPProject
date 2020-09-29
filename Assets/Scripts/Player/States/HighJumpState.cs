@@ -11,6 +11,5 @@ public class HighJumpState : PlayerState
 
     protected override void CustomStateUpdate()
     {
-        PlayerController.Instance.HighJump(mirrored ? -1.0f : 1.0f);
     }
 }

@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4773f4aec05824b8789c767a85c869, type: 3}
-  m_Name: RunLeft
+  m_Script: {fileID: 11500000, guid: 0c6e4b9d177e0bd43adebaaa553eb36a, type: 3}
+  m_Name: CrouchWalkLeft
   m_EditorClassIdentifier: 
   possibleNextStates: []
-  buttons: 00000000
+  buttons: 0300000000000000
   looping: 1
   duration: 1
-  animationName: Artemis_Run
+  animationName: Artemis_CrouchWalk
   mirrored: 1
-  movementSpeed: 4
+  movementSpeed: 0.5

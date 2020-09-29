@@ -7,24 +7,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float walkSpeed = 1.0f;
-
-    [SerializeField]
-    private float runSpeed = 3.0f;
-
-    [SerializeField]
-    private float jumpSpeed = 3.0f;
-
-    [SerializeField]
-    private float crouchSpeed = 1.0f;
-
-
-    [SerializeField]
     private PlayerState defaultState;
     
     private Animator animator;
     private PlayerState currentState;
 
+    // There should be only one player object in the scene, access it as a singleton.
     public static PlayerController Instance { get; private set; }
 
     public bool Falling { get; private set; }
@@ -60,6 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("Missing InputMapper, add one to the hierarchy.");
         }
+        if (!defaultState)
+        {
+            Debug.LogWarning("Missing default state for the player.");
+        }
 
         ChangeToDefaultState();
     }
@@ -83,33 +75,5 @@ public class PlayerController : MonoBehaviour
     public void ChangeToDefaultState()
     {
         ChangeState(defaultState);
-    }
-
-    public void Walk(float multiplier)
-    {
-        transform.position += new Vector3(walkSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
-    }
-
-    public void Run(float multiplier)
-    {
-        transform.position += new Vector3(runSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
-
-    }
-
-    public void HighJump(float multiplier)
-    {
-        transform.position += new Vector3(0.0f, jumpSpeed * Time.deltaTime * multiplier, 0.0f);
-
-    }
-
-    public void LongJump(float multiplier)
-    {
-        transform.position += new Vector3(jumpSpeed * Time.deltaTime * multiplier, jumpSpeed * Time.deltaTime / multiplier, 0.0f);
-
-    }
-
-    public void Crouch(float multiplier)
-    {
-        transform.position += new Vector3(crouchSpeed * Time.deltaTime * multiplier, 0.0f, 0.0f);
     }
 }

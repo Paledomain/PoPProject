@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 841189396094c0e488f3e3161814d0c4, type: 3}
-  m_Name: CrouchLeft
+  m_Name: CrouchRight
   m_EditorClassIdentifier: 
-  possibleNextStates:
-  - {fileID: 11400000, guid: 8d9824b9b6fed6c438a744a184319e6e, type: 2}
-  - {fileID: 11400000, guid: 24cf3208eec2cca459a25e4fe2892dcf, type: 2}
-  - {fileID: 11400000, guid: aa6f4e43f5a8ee141b5383f811f14a79, type: 2}
-  buttons: 000000000300000004000000
+  possibleNextStates: []
+  buttons: 03000000
   looping: 1
   duration: 1
-  animatorParameters:
-  - Crouch
-  mirrored: 1
+  animationName: Artemis_Crouch
+  mirrored: 0
