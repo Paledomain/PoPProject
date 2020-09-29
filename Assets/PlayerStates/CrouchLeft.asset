@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 841189396094c0e488f3e3161814d0c4, type: 3}
-  m_Name: CrouchRight
+  m_Name: CrouchLeft
   m_EditorClassIdentifier: 
   possibleNextStates: []
   buttons: 03000000
   looping: 1
   duration: 1
   animationName: Artemis_Crouch
-  mirrored: 0
+  mirrored: 1

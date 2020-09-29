@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HighJumpState", menuName = "PlayerState/HighJump", order = 1)]
-public class HighJumpState : PlayerState
+[CreateAssetMenu(fileName = "TransitionToIdleState", menuName = "PlayerState/TransitionToIdle", order = 1)]
+public class TransitionToIdleState : PlayerState
 {
     protected override void CustomStartState()
     {

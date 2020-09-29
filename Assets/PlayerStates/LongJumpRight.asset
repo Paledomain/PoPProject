@@ -18,3 +18,4 @@ MonoBehaviour:
   duration: 1
   animationName: Artemis_Jump
   mirrored: 0
+  jumpForce: {x: 20, y: 210}

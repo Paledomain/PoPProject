@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4773f4aec05824b8789c767a85c869, type: 3}
-  m_Name: RunRight
+  m_Script: {fileID: 11500000, guid: af55cc84fe684f34e950ad4fe03d120f, type: 3}
+  m_Name: IdleToRunRight
   m_EditorClassIdentifier: 
   possibleNextStates:
-  - {fileID: 11400000, guid: fea394f49ba160b4da5e350145f3b507, type: 2}
+  - {fileID: 11400000, guid: 52964312494bf5d4998db9c4baee572d, type: 2}
   - {fileID: 11400000, guid: 2e38fbfa91d5b9544a25eda3bee151be, type: 2}
   buttons: 01000000
-  looping: 1
-  duration: 1
-  animationName: Artemis_Run
+  looping: 0
+  duration: 0.4
+  animationName: Artemis_IdleToRun
   mirrored: 0
-  movementSpeed: 4
+  targetSpeed: 4

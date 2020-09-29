@@ -37,7 +37,7 @@ public abstract class PlayerState : ScriptableObject
     [SerializeField]
     private bool looping;
     [SerializeField, Tooltip("Duration in seconds, used only for un-looping states")]
-    private float duration = 1.0f;
+    protected float duration = 1.0f;
     [SerializeField]
     private string animationName;
     [SerializeField]
@@ -46,12 +46,20 @@ public abstract class PlayerState : ScriptableObject
     private List<KeyBindToState> keyBinds;
     protected Animator animator;
     private float stateStartTime;
+    protected Rigidbody2D playerRigidBody;
+
+
+    protected float ElapsedTime
+    {
+        get { return Time.time - stateStartTime; }
+    }
 
     public void StartState(Animator animatorArg)
     {
         animator = animatorArg;
         stateStartTime = Time.time;
-        if (looping)
+        playerRigidBody = PlayerController.Instance.GetComponent<Rigidbody2D>();
+
         {
             var keyBindList = new List<KeyBindToState>();
             foreach (PlayerState pState in possibleNextStates)
@@ -88,8 +96,7 @@ public abstract class PlayerState : ScriptableObject
         }
         else
         {
-            float elapsedTime = Time.time - stateStartTime;
-            if (elapsedTime > duration)
+            if (ElapsedTime > duration)
             {
                 PlayerState desiredNextState = FindDesiredNextState();
                 if (desiredNextState)
@@ -106,6 +113,11 @@ public abstract class PlayerState : ScriptableObject
     }
 
     protected abstract void CustomStateUpdate();
+
+    // States don't need to implement fixed update, but they are free to do so.
+    public virtual void FixedUpdateState()
+    {
+    }
 
     private PlayerState FindDesiredNextState()
     {

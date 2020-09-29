@@ -198,6 +198,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf268a34db929024fb79cf03308e92a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
-  runSpeed: 8
   defaultState: {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}

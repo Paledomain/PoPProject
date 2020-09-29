@@ -9,16 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdda098f4c639c4eb6b653b01d7d350, type: 3}
-  m_Name: IdleRight
+  m_Script: {fileID: 11500000, guid: 92d83cbe05198d1408d48266c04c848d, type: 3}
+  m_Name: RunRightToIdle
   m_EditorClassIdentifier: 
   possibleNextStates:
-  - {fileID: 11400000, guid: 58b3e4097ea6fcb43914d4ec559bf3ed, type: 2}
-  - {fileID: 11400000, guid: b6a977c3e0a466342b59c16398801bec, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
   buttons: 
-  looping: 1
+  looping: 0
   duration: 1
-  animationName: Artemis_Idle
+  animationName: Artemis_RunToIdleSkid
   mirrored: 0

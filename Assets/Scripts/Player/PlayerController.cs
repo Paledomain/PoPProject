@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     
     private Animator animator;
     private PlayerState currentState;
+    private Vector3 previousPosition;
 
     // There should be only one player object in the scene, access it as a singleton.
     public static PlayerController Instance { get; private set; }
@@ -28,6 +29,15 @@ public class PlayerController : MonoBehaviour
             float newXScale = value ? -Mathf.Abs(transform.localScale.x) : Mathf.Abs(transform.localScale.x);
             transform.localScale = new Vector3(newXScale, transform.localScale.y, transform.localScale.z);
         }
+    }
+
+    public float PureVelocitySquared
+    {
+        get { return (transform.position - previousPosition).sqrMagnitude; }
+    }
+    public float PureVelocity
+    {
+        get { return (transform.position - previousPosition).magnitude; }
     }
 
     private void Start()
@@ -59,6 +69,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     { 
         currentState.UpdateState();
+        previousPosition = transform.position;
+    }
+
+    private void FixedUpdate()
+    {
+        currentState.FixedUpdateState();
     }
 
     public void ChangeState(PlayerState boundState)

@@ -32,7 +32,7 @@ public class InputMapper : MonoBehaviour
             case GameButton.Up:
                 return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
             case GameButton.Down:
-                return Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.DownArrow);
+                return Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
             case GameButton.Shift:
                 return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
             default:
