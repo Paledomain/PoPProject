@@ -19,11 +19,11 @@ public class TurnState : PlayerState
     {
         if (!PlayerController.Instance.Mirrored)
         {
-            return InputMapper.Instance.GetKey(GameButton.Right);
+            return buttons.Contains(GameButton.Right);
         }
         else
         {
-            return InputMapper.Instance.GetKey(GameButton.Left);
+            return buttons.Contains(GameButton.Left);
         }
     }
 }

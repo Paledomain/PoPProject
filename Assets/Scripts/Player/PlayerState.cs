@@ -33,7 +33,7 @@ public abstract class PlayerState : ScriptableObject
     [SerializeField]
     private List<PlayerState> possibleNextStates;
     [SerializeField]
-    private List<GameButton> buttons; 
+    protected List<GameButton> buttons; 
     [SerializeField]
     private bool looping;
     [SerializeField, Tooltip("Duration in seconds, used only for un-looping states")]

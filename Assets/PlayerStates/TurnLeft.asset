@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TurnLeft
   m_EditorClassIdentifier: 
   possibleNextStates: []
-  buttons: 
+  buttons: 00000000
   looping: 0
   duration: 0.4
   animationName: Artemis_Idle

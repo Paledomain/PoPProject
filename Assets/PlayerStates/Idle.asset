@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleNextStates:
   - {fileID: 11400000, guid: 58b3e4097ea6fcb43914d4ec559bf3ed, type: 2}
-  - {fileID: 11400000, guid: b6a977c3e0a466342b59c16398801bec, type: 2}
+  - {fileID: 11400000, guid: 7cb1d4a60f5b1274ca2062f1a47bc31e, type: 2}
   - {fileID: 11400000, guid: 55cbb1af3952ab74195a9381b584e396, type: 2}
   - {fileID: 11400000, guid: 3498d6e3e39b9764da92f6155b2ea72f, type: 2}
   - {fileID: 11400000, guid: fea394f49ba160b4da5e350145f3b507, type: 2}
   - {fileID: 11400000, guid: 1984d0d239caf4b4594d03e48cb11507, type: 2}
   - {fileID: 11400000, guid: 7ede1b567487ac94da9005213981677c, type: 2}
+  - {fileID: 11400000, guid: 2a67a9c18cff50e429233f65ad8e8c30, type: 2}
   - {fileID: 11400000, guid: e48ee89dfddcf104c92beb0f589b040d, type: 2}
-  - {fileID: 11400000, guid: 7cb1d4a60f5b1274ca2062f1a47bc31e, type: 2}
+  - {fileID: 11400000, guid: b6a977c3e0a466342b59c16398801bec, type: 2}
   buttons: 
   looping: 1
   duration: 1
