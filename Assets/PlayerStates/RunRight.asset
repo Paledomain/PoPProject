@@ -20,5 +20,5 @@ MonoBehaviour:
   looping: 1
   duration: 1
   animationName: Artemis_Run
-  movementSpeed: 4
-  jumpForceFromState: {x: 310, y: 160}
+  movementSpeed: 7
+  jumpForceFromState: {x: 500, y: 160}
