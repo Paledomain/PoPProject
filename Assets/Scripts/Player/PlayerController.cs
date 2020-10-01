@@ -37,7 +37,14 @@ public class PlayerController : MonoBehaviour
 
             int layerMask = 1 << 8;
             Vector3 raycastStart = transform.position + groundedRaycastStartOffset;
-            cachedGroundedValue = Physics2D.Raycast(raycastStart, Vector3.down, 0.15f, layerMask);
+            bool castResult = Physics2D.Raycast(raycastStart, Vector3.down, 0.15f, layerMask);
+            // If raycast didn't find anything, perform a capsule cast to make sure.
+            if (!castResult || true)
+            {
+                castResult = Physics2D.OverlapCapsule((Vector2)(transform.position) - new Vector2(0.0f, 0.15f), colliderComponent.size, CapsuleDirection2D.Vertical, 0, layerMask);
+            }
+            cachedGroundedValue = castResult;
+
             groundedIsCached = true;
             return cachedGroundedValue;
         }

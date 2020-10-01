@@ -15,10 +15,6 @@ public class MoveState : PlayerState
 
     protected override void CustomStartState()
     {
-        if (CustomJumpForce.sqrMagnitude < 0.01f)
-        {
-            Debug.LogWarning("Did you purposefully omit jump force from this state? " + this.ToString());
-        }
     }
 
     protected override void CustomStateUpdate()
