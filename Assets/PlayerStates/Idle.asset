@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Idle
   m_EditorClassIdentifier: 
   possibleNextStates:
-  - {fileID: 11400000, guid: 58b3e4097ea6fcb43914d4ec559bf3ed, type: 2}
+  - {fileID: 11400000, guid: a18b98f9e7a7aef429487c29a11170aa, type: 2}
   - {fileID: 11400000, guid: 7cb1d4a60f5b1274ca2062f1a47bc31e, type: 2}
   - {fileID: 11400000, guid: 55cbb1af3952ab74195a9381b584e396, type: 2}
   - {fileID: 11400000, guid: 3498d6e3e39b9764da92f6155b2ea72f, type: 2}

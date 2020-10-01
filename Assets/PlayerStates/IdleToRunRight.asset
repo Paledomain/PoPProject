@@ -19,5 +19,6 @@ MonoBehaviour:
   looping: 0
   duration: 0.4
   animationName: Artemis_IdleToRun
-  mirrored: 0
+  interruptTime: 0.3
+  interruptState: {fileID: 11400000, guid: fea394f49ba160b4da5e350145f3b507, type: 2}
   targetSpeed: 4

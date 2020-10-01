@@ -18,4 +18,4 @@ MonoBehaviour:
   looping: 0
   duration: 1
   animationName: Artemis_Jump
-  jumpForce: {x: 20, y: 210}
+  defaultJumpForce: {x: 210, y: 160}

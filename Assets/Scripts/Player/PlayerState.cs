@@ -47,6 +47,7 @@ public abstract class PlayerState : ScriptableObject
     protected Rigidbody2D playerRigidBody;
     protected bool falling = false;
     protected PlayerState _previousState;
+    protected bool interruptable = false;
 
     protected float ElapsedTime
     {
@@ -69,12 +70,21 @@ public abstract class PlayerState : ScriptableObject
         }
     }
 
+    public List<GameButton> Buttons
+    {
+        get
+        {
+            return buttons;
+        }
+    }
+
     public void StartState(Animator animatorArg, PlayerState previousState)
     {
         animator = animatorArg;
         stateStartTime = Time.time;
         playerRigidBody = PlayerController.Instance.GetComponent<Rigidbody2D>();
         _previousState = previousState;
+        interruptable = looping;
 
         {
             var keyBindList = new List<KeyBindToState>();
@@ -91,7 +101,9 @@ public abstract class PlayerState : ScriptableObject
             keyBinds = keyBindList.OrderByDescending(keyBind => keyBind.keys.Count).ToList();
         }
 
-        animator.Play(animationName);
+        if (!string.IsNullOrEmpty(animationName))
+            animator.Play(animationName);
+        
         CustomStartState();
     }
 
@@ -99,7 +111,7 @@ public abstract class PlayerState : ScriptableObject
 
     public void UpdateState()
     {
-        if (looping && !falling)
+        if (interruptable && !falling)
         {
             if (!PlayerController.Instance.Grounded)
             {
@@ -113,7 +125,7 @@ public abstract class PlayerState : ScriptableObject
                 return;
             }
         }
-        else if (!looping)
+        else if (!interruptable)
         {
             if (ElapsedTime > duration)
             {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "JumpUpState", menuName = "PlayerState/JumpUp", order = 1)]
-public class JumpUpState : PlayerState
+public class JumpUpState : InterruptablePlayerState
 {
     [SerializeField]
     private float preparationDuration = 0.3f;
@@ -21,7 +21,7 @@ public class JumpUpState : PlayerState
     {
     }
 
-    protected override void CustomStateUpdate()
+    protected override void ChildCustomStateUpdate()
     {
         if (!impulseApplied && ElapsedTime > preparationDuration)
         {

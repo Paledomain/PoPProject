@@ -8,8 +8,17 @@ public class MoveState : PlayerState
     [SerializeField]
     private float movementSpeed = 1.0f;
 
+    [SerializeField]
+    private Vector2 jumpForceFromState;
+
+    public Vector2 CustomJumpForce { get { return jumpForceFromState; } }
+
     protected override void CustomStartState()
     {
+        if (CustomJumpForce.sqrMagnitude < 0.01f)
+        {
+            Debug.LogWarning("Did you purposefully omit jump force from this state? " + this.ToString());
+        }
     }
 
     protected override void CustomStateUpdate()

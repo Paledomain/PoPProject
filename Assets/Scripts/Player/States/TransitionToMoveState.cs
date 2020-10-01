@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TransitionToMoveState", menuName = "PlayerState/TransitionToMove", order = 1)]
-public class TransitionToMoveState : PlayerState
+public class TransitionToMoveState : InterruptablePlayerState
 {
     [SerializeField]
     private float targetSpeed = 1.0f;
@@ -15,7 +15,7 @@ public class TransitionToMoveState : PlayerState
         startVelocity = playerRigidBody.velocity.x;
     }
 
-    protected override void CustomStateUpdate()
+    protected override void ChildCustomStateUpdate()
     {
         if (PlayerController.Instance.PureVelocitySquared > targetSpeed * targetSpeed)
             return;
