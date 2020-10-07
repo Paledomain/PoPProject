@@ -31,7 +31,7 @@ public abstract class PlayerState : ScriptableObject
     }
     
     [SerializeField]
-    private List<PlayerState> possibleNextStates;
+    protected List<PlayerState> possibleNextStates;
     [SerializeField]
     protected List<GameButton> buttons; 
     [SerializeField]
