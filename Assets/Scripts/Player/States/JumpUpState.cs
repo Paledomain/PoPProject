@@ -16,9 +16,20 @@ public class JumpUpState : InterruptablePlayerState
     private Vector2 impulse;
 
     private bool impulseApplied = false;
+    private bool secondAnimStarted = false;
+    private ClimbState nextClimbUpState;
 
     protected override void CustomStartState()
     {
+        foreach (var state in possibleNextStates)
+        {
+            ClimbState cs = state as ClimbState;
+            if (cs)
+            {
+                nextClimbUpState = cs;
+                break;
+            }
+        }
     }
 
     protected override void ChildCustomStateUpdate()
@@ -31,7 +42,35 @@ public class JumpUpState : InterruptablePlayerState
         
         if (ElapsedTime > firstAnimDuration)
         {
-            animator.Play(secondAnimationName);
+            if (!secondAnimStarted)
+            {
+                animator.Play(secondAnimationName);
+                secondAnimStarted = true;
+            }
+            Vector2 climbUpPos;
+            if (ClimbUpAvailable() && PlayerController.Instance.ClimbUpAvailable(out climbUpPos))
+            {
+                PlayerController.Instance.ChangeState(nextClimbUpState);
+            }
         }
+    }
+
+    private bool ClimbUpAvailable()
+    {
+        if (nextClimbUpState)
+        {
+            bool buttonsPressed = true;
+            foreach (var btn in nextClimbUpState.Buttons)
+            {
+                if (!InputMapper.Instance.GetKey(btn))
+                {
+                    buttonsPressed = false;
+                    break;
+                }
+            }
+            if (buttonsPressed)
+                return true;
+        }
+        return false;
     }
 }

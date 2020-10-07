@@ -7,6 +7,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
+    private ClimbPointTracker climbPointUp;
+    [SerializeField]
+    private ClimbPointTracker climbPointDown;
+    [SerializeField]
     private PlayerState defaultState;
     [SerializeField]
     private PlayerState fallingState;
@@ -112,24 +116,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         groundedIsCached = false;
-        // Change mirrored status with a short delay.
-        if (transform.position.x < previousPosition.x && !Mirrored)
+        
+        // Change mirrored status
+        bool leftPressed = InputMapper.Instance.GetKey(GameButton.Left);
+        bool rightPressed = InputMapper.Instance.GetKey(GameButton.Right);
+        if (leftPressed && !rightPressed)
         {
-            framesUntilMirror--;
-            if (framesUntilMirror == 0)
-            {
-                Mirrored = true;
-                framesUntilMirror = 5;
-            }
+            DelayedSetMirror(true);
         }
-        else if (transform.position.x > previousPosition.x && Mirrored)
+        else if (rightPressed && !leftPressed)
         {
-            framesUntilMirror--;
-            if (framesUntilMirror == 0)
-            {
-                Mirrored = false;
-                framesUntilMirror = 5;
-            }
+            DelayedSetMirror(false);
+        }
+        else if (leftPressed && rightPressed)
+        {
+            DelayedSetMirror(false, true);
         }
         currentState.UpdateState();
         previousPosition = transform.position;
@@ -168,5 +169,47 @@ public class PlayerController : MonoBehaviour
     public void ForceToggleMirrored()
     {
         Mirrored = !Mirrored;
+    }
+
+    public bool ClimbUpAvailable(out Vector2 climbPointPos)
+    {
+        if (!climbPointUp)
+        {
+            climbPointPos = Vector2.zero;
+            return false;
+        }
+        return climbPointUp.ClimbAvailable(Mirrored ? ClimbDirection.Left : ClimbDirection.Right, out climbPointPos);
+    }
+
+    public bool ClimbDownAvailable(out Vector2 climbPointPos)
+    {
+        if (!climbPointDown)
+        {
+            climbPointPos = Vector2.zero;
+            return false;
+        }
+        return climbPointDown.ClimbAvailable(Mirrored ? ClimbDirection.Left : ClimbDirection.Right, out climbPointPos);
+    }
+
+    private void DelayedSetMirror(bool mirror, bool ignoreFirstParam = false)
+    {
+        if ((mirror || ignoreFirstParam) && transform.position.x < previousPosition.x && !Mirrored)
+        {
+            framesUntilMirror--;
+            if (framesUntilMirror == 0)
+            {
+                Mirrored = true;
+                framesUntilMirror = 5;
+            }
+        }
+        else if ((!mirror || ignoreFirstParam)&& transform.position.x > previousPosition.x && Mirrored)
+        {
+            framesUntilMirror--;
+            if (framesUntilMirror == 0)
+            {
+                Mirrored = false;
+                framesUntilMirror = 5;
+            }
+        }
     }
 }

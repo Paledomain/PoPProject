@@ -9,19 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6978a0d83990e5741923e7db8f9b8781, type: 3}
-  m_Name: JumpUpRight
+  m_Script: {fileID: 11500000, guid: 4490cdd54c3d17346a0f76a8424373b7, type: 3}
+  m_Name: ClimbUp
   m_EditorClassIdentifier: 
   possibleNextStates:
   - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
-  - {fileID: 11400000, guid: 4c1daacd92b40ea459fcd4e62f5cd240, type: 2}
   buttons: 02000000
   looping: 0
   duration: 1
-  animationName: Artemis_JumpUp
-  interruptTime: 0.3
-  interruptState: {fileID: 11400000, guid: fea394f49ba160b4da5e350145f3b507, type: 2}
-  preparationDuration: 0.3
-  firstAnimDuration: 0.52
-  secondAnimationName: Artemis_JumpUpAir
-  impulse: {x: 10, y: 215}
+  animationName: Artemis_ClimbUp
+  direction: 0
+  endPositionFromClimbPoint: {x: 0.3, y: 1}
