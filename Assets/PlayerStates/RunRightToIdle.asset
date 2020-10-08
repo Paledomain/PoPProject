@@ -18,4 +18,3 @@ MonoBehaviour:
   looping: 0
   duration: 1
   animationName: Artemis_RunToIdleSkid
-  mirrored: 0
