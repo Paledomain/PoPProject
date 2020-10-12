@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f634b2d332f7ba488ef4276647b63e1, type: 3}
   m_Name: TurnRight
   m_EditorClassIdentifier: 
-  possibleNextStates: []
+  possibleNextStates:
+  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
   buttons: 01000000
   looping: 0
   duration: 0.4

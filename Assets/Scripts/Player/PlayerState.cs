@@ -162,7 +162,7 @@ public abstract class PlayerState : ScriptableObject
 
         foreach (var keyBind in keyBinds)
         {
-            if (!keyBind.boundState.IgnoreState() && keyBind.AllButtonsDown())
+            if (keyBind.AllButtonsDown() && !keyBind.boundState.IgnoreState())
             {
                 return keyBind.boundState;
             }
