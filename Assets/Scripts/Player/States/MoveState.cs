@@ -7,7 +7,6 @@ public class MoveState : PlayerState
 {
     [SerializeField]
     private float movementSpeed = 1.0f;
-
     [SerializeField]
     private Vector2 jumpForceFromState;
 

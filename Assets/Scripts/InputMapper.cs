@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum GameButton
 {
-    Left, Right, Up, Down, Shift
+    Left, Right, Up, Down, Shift, Restart
 }
 public class InputMapper : MonoBehaviour
 {
@@ -35,6 +35,8 @@ public class InputMapper : MonoBehaviour
                 return Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
             case GameButton.Shift:
                 return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            case GameButton.Restart:
+                return Input.GetKey(KeyCode.R) || Input.GetKey(KeyCode.Escape);
             default:
                 return false;
         }

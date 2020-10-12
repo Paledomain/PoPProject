@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DeathType
+{
+    Fall, Trap
+}
+
 [RequireComponent(typeof(Animator), typeof(CapsuleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
@@ -15,7 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PlayerState fallingState;
     [SerializeField]
+    private PlayerState trapDeathState;
+    [SerializeField]
+    private PlayerState fallDeathState;
+    [SerializeField]
     private PlayerGroundChecker groundChecker;
+    [SerializeField]
+    private PlayerHealth health;
     
     private Animator animator;
     private PlayerState previousState;
@@ -37,7 +48,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool Dead { get; private set; }
+    private bool _dead = false;
+    public bool Dead { 
+        get { return _dead; }
+        private set
+        {
+            _dead = value;
+            if (value)
+            {
+                health.Health = 0;
+            }
+        }
+    }
 
     public bool Mirrored
     {
@@ -135,7 +157,8 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeToDefaultState()
     {
-        ChangeState(defaultState);
+        if (!Dead)
+            ChangeState(defaultState);
     }
 
     public void ChangeToFallingState()
@@ -166,6 +189,20 @@ public class PlayerController : MonoBehaviour
             return false;
         }
         return climbPointDown.ClimbAvailable(Mirrored ? ClimbDirection.Left : ClimbDirection.Right, out climbPointPos);
+    }
+
+    public void Die(DeathType type)
+    {
+        Dead = true;
+        switch (type)
+        {
+            case DeathType.Trap:
+                ChangeState(trapDeathState);
+                break;
+            default:
+                ChangeState(fallDeathState);
+                break;
+        }
     }
 
     private void DelayedSetMirror(bool mirror, bool ignoreFirstParam = false)
