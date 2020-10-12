@@ -21,6 +21,10 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!player)
+        {
+            return;
+        }
         if (player.transform.position.x > topRight.x + 0.1f)
         {
             transform.position += new Vector3(_cameraComponent.orthographicSize * _cameraComponent.aspect * 2, 0.0f, 0.0f);

@@ -20,5 +20,5 @@ MonoBehaviour:
   looping: 1
   duration: 1
   animationName: Artemis_Walk
-  movementSpeed: 3
+  movementSpeed: 1.8
   jumpForceFromState: {x: 0, y: 0}

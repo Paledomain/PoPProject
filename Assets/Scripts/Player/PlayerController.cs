@@ -14,21 +14,18 @@ public class PlayerController : MonoBehaviour
     private PlayerState defaultState;
     [SerializeField]
     private PlayerState fallingState;
+    [SerializeField]
+    private PlayerGroundChecker groundChecker;
     
     private Animator animator;
     private PlayerState previousState;
     private PlayerState currentState;
     private Vector3 previousPosition;
 
-    private bool cachedGroundedValue;
-    private bool groundedIsCached = false;
-    private Vector3 groundedRaycastStartOffset;
-
     // How many frames the transform should move to other direction before mirroring? This is to avoid flickering.
     int framesUntilMirror = 5;
     private bool _mirrored = false;
 
-    CapsuleCollider2D colliderComponent;
     // There should be only one player object in the scene, access it as a singleton.
     public static PlayerController Instance { get; private set; }
 
@@ -36,25 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         get 
         {
-            if (groundedIsCached)
-                return cachedGroundedValue;
-
-            int layerMask = 1 << 8;
-            Vector3 raycastStart = transform.position + groundedRaycastStartOffset;
-            bool castResult = Physics2D.Raycast(raycastStart, Vector3.down, transform.localScale.y * 0.15f, layerMask);
-            // If raycast didn't find anything, perform a capsule cast to make sure.
-            if (!castResult || true)
-            {
-                castResult = Physics2D.OverlapCapsule(
-                    (Vector2)(transform.position) - 
-                    new Vector2(0.0f, transform.lossyScale.y * 0.15f), 
-                    Vector2.Scale(colliderComponent.size, (Vector2)transform.lossyScale), 
-                    CapsuleDirection2D.Vertical, 0, layerMask);
-            }
-            cachedGroundedValue = castResult;
-
-            groundedIsCached = true;
-            return cachedGroundedValue;
+            return groundChecker.GroundTouches > 0;
         }
     }
 
@@ -95,15 +74,7 @@ public class PlayerController : MonoBehaviour
             Instance = this;
         }
 
-        colliderComponent = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
-
-        {
-            // We don't expect this to change so only calculate it once.
-            Vector2 colliderBottomLocal = new Vector2(0.0f, -colliderComponent.size.y / 2 - colliderComponent.size.x / 2);
-            Vector2 colliderBottom = (colliderComponent.offset + colliderBottomLocal);
-            groundedRaycastStartOffset = new Vector3(colliderBottom.x * transform.localScale.x, colliderBottom.y * transform.localScale.y * 0.95f, 0.0f);
-        }
 
         if (!FindObjectOfType<InputMapper>())
         {
@@ -113,14 +84,16 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("Missing default state for the player.");
         }
+        if (!groundChecker)
+        {
+            Debug.LogWarning("Missing ground checker from player.");
+        }
 
         ChangeToDefaultState();
     }
 
     private void Update()
     {
-        groundedIsCached = false;
-        
         // Change mirrored status
         bool leftPressed = InputMapper.Instance.GetKey(GameButton.Left);
         bool rightPressed = InputMapper.Instance.GetKey(GameButton.Right);

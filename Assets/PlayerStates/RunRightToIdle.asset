@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
   buttons: 
   looping: 0
-  duration: 1
+  duration: 0.6
   animationName: Artemis_RunToIdleSkid

@@ -11,7 +11,7 @@ public class MoveState : PlayerState
     [SerializeField]
     private Vector2 jumpForceFromState;
 
-    bool leftMoving = false;
+    public float MovementSpeed { get { return movementSpeed; } }
 
     public Vector2 CustomJumpForce { get { return jumpForceFromState; } }
 

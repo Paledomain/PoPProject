@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TransitionToMoveState", menuName = "PlayerState/TransitionToMove", order = 1)]
 public class TransitionToMoveState : InterruptablePlayerState
 {
-    [SerializeField]
     private float targetSpeed = 1.0f;
 
     private float startVelocity = 0.0f;
@@ -13,6 +12,14 @@ public class TransitionToMoveState : InterruptablePlayerState
     protected override void CustomStartState()
     {
         startVelocity = playerRigidBody.velocity.x;
+        foreach (var state in possibleNextStates)
+        {
+            MoveState nextMoveState = state as MoveState;
+            if (nextMoveState)
+            {
+                targetSpeed = Mathf.Max(targetSpeed, nextMoveState.MovementSpeed);
+            }
+        }
     }
 
     protected override void ChildCustomStateUpdate()
