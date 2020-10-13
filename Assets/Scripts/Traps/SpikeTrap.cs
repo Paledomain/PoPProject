@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
 {
+    private void FixedUpdate()
+    {
+        if (PlayerController.Instance.Dead)
+        {
+            GetComponent<Animator>().SetBool("playerDead", true);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Char"))
@@ -11,7 +19,6 @@ public class SpikeTrap : MonoBehaviour
             GetComponent<Animator>().SetBool("pressed", true);
             if (other.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Artemis_Run"))
             {
-                Debug.Log("haha get spike trapped");
                 PlayerHealth.Instance.ApplySpikeDamage(100);
             }
         }
