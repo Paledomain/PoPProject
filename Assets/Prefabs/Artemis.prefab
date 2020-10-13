@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 3210734802102969345}
   - component: {fileID: 761258558710125705}
   - component: {fileID: 17102828}
+  - component: {fileID: 1147480030}
   m_Layer: 0
   m_Name: Artemis
   m_TagString: Char
@@ -255,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 6281145505126775505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.06, y: 2.72, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 451265451}
   - {fileID: 79369318}
@@ -387,4 +388,21 @@ MonoBehaviour:
   climbPointDown: {fileID: 1789892126}
   defaultState: {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
   fallingState: {fileID: 11400000, guid: ee1e6ed2959ef7948ba0067731840f80, type: 2}
+  trapDeathState: {fileID: 11400000, guid: 9f01f48445308df4ca7ab50fd8399f0f, type: 2}
+  fallDeathState: {fileID: 11400000, guid: 563398c636692f54a9a26ace165ce5c8, type: 2}
   groundChecker: {fileID: 4199651827144947438}
+--- !u!114 &1147480030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281145505126775505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b07183fc1a97c479a5da117188b33d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  damageThreshold: 10
+  healthText: {fileID: 0}

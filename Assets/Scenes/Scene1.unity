@@ -1070,18 +1070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 17102828, guid: 9bc144c99611b674885ce8264044773c, type: 3}
-      propertyPath: fallDeathState
+    - target: {fileID: 1147480030, guid: 9bc144c99611b674885ce8264044773c, type: 3}
+      propertyPath: healthText
       value: 
-      objectReference: {fileID: 11400000, guid: 563398c636692f54a9a26ace165ce5c8, type: 2}
-    - target: {fileID: 17102828, guid: 9bc144c99611b674885ce8264044773c, type: 3}
-      propertyPath: trapDeathState
-      value: 
-      objectReference: {fileID: 11400000, guid: 9f01f48445308df4ca7ab50fd8399f0f, type: 2}
-    - target: {fileID: 17102828, guid: 9bc144c99611b674885ce8264044773c, type: 3}
-      propertyPath: health
-      value: 
-      objectReference: {fileID: 1147480030}
+      objectReference: {fileID: 787972579}
     - target: {fileID: 6281145505126775505, guid: 9bc144c99611b674885ce8264044773c, type: 3}
       propertyPath: m_Name
       value: Artemis
@@ -1129,14 +1121,6 @@ PrefabInstance:
     - target: {fileID: 6281145505126775511, guid: 9bc144c99611b674885ce8264044773c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281145505126775511, guid: 9bc144c99611b674885ce8264044773c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6281145505126775511, guid: 9bc144c99611b674885ce8264044773c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bc144c99611b674885ce8264044773c, type: 3}
@@ -1813,7 +1797,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 17102828, guid: 9bc144c99611b674885ce8264044773c, type: 3}
   m_PrefabInstance: {fileID: 435215962}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147480025}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf268a34db929024fb79cf03308e92a5, type: 3}
@@ -2865,26 +2849,49 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!1 &1147480025 stripped
+--- !u!1 &1160749224
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6281145505126775505, guid: 9bc144c99611b674885ce8264044773c, type: 3}
-  m_PrefabInstance: {fileID: 435215962}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1147480030
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160749226}
+  - component: {fileID: 1160749225}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1160749225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147480025}
+  m_GameObject: {fileID: 1160749224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45b07183fc1a97c479a5da117188b33d, type: 3}
+  m_Script: {fileID: 11500000, guid: ad50da1dc76760142b677fa8cf45bcdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  damageThreshold: 10
-  healthText: {fileID: 787972579}
+--- !u!4 &1160749226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160749224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222329722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2162172005428358472, guid: c32af4c03250c7c438d446454903ccc8, type: 3}
