@@ -4,16 +4,12 @@ using UnityEngine;
 using TMPro;
 
 [RequireComponent(typeof(TMP_Text))]
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealthText : MonoBehaviour
 {
     private TMP_Text healthText;
     private int _health = 3;
     public int Health
     {
-        get
-        {
-            return _health;
-        }
         set
         {
             _health = value;
@@ -29,11 +25,5 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.LogWarning("Missing health text.");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

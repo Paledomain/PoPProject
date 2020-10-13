@@ -12,7 +12,7 @@ public class SpikeTrap : MonoBehaviour
             if (other.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Artemis_Run"))
             {
                 Debug.Log("haha get spike trapped");
-                PlayerController.Instance.Die(DeathType.Trap);
+                PlayerHealth.Instance.ApplySpikeDamage(100);
             }
         }
     }
@@ -24,5 +24,4 @@ public class SpikeTrap : MonoBehaviour
             GetComponent<Animator>().SetBool("pressed", false);
         }
     }
-
 }

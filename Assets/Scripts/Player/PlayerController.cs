@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     private PlayerState fallDeathState;
     [SerializeField]
     private PlayerGroundChecker groundChecker;
-    [SerializeField]
-    private PlayerHealth health;
     
     private Animator animator;
     private PlayerState previousState;
@@ -48,18 +46,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool _dead = false;
-    public bool Dead { 
-        get { return _dead; }
-        private set
-        {
-            _dead = value;
-            if (value)
-            {
-                health.Health = 0;
-            }
-        }
-    }
+    public bool Dead { get { return PlayerHealth.Instance.Health <= 0; } }
 
     public bool Mirrored
     {
@@ -193,7 +180,9 @@ public class PlayerController : MonoBehaviour
 
     public void Die(DeathType type)
     {
-        Dead = true;
+        if (PlayerHealth.Instance.Health > 0)
+            Debug.LogWarning("Health is supposed to be 0 before calling the Die() method.");
+
         switch (type)
         {
             case DeathType.Trap:
