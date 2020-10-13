@@ -7,16 +7,9 @@ public class JumpUpState : InterruptablePlayerState
     private float preparationDuration = 0.3f;
     
     [SerializeField]
-    private float firstAnimDuration = 0.6f;
-
-    [SerializeField]
-    private string secondAnimationName;
-    
-    [SerializeField]
     private Vector2 impulse;
 
     private bool impulseApplied = false;
-    private bool secondAnimStarted = false;
     private ClimbState nextClimbUpState;
 
     protected override void CustomStartState()
@@ -39,19 +32,10 @@ public class JumpUpState : InterruptablePlayerState
             impulseApplied = true;
             playerRigidBody.AddForce(impulse, ForceMode2D.Impulse);
         }
-        
-        if (ElapsedTime > firstAnimDuration)
+        Vector2 climbUpPos;
+        if (ClimbUpAvailable() && PlayerController.Instance.ClimbUpAvailable(out climbUpPos))
         {
-            if (!secondAnimStarted)
-            {
-                animator.Play(secondAnimationName);
-                secondAnimStarted = true;
-            }
-            Vector2 climbUpPos;
-            if (ClimbUpAvailable() && PlayerController.Instance.ClimbUpAvailable(out climbUpPos))
-            {
-                PlayerController.Instance.ChangeState(nextClimbUpState);
-            }
+            PlayerController.Instance.ChangeState(nextClimbUpState);
         }
     }
 
