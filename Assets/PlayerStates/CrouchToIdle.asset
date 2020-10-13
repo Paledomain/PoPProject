@@ -18,3 +18,4 @@ MonoBehaviour:
   looping: 0
   duration: 0.3
   animationName: Artemis_CrouchToIdle
+  _safeFromSpikes: 1

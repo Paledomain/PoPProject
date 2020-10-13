@@ -20,3 +20,4 @@ MonoBehaviour:
   looping: 1
   duration: 1
   animationName: Artemis_Crouch
+  _safeFromSpikes: 1

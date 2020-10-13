@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
         get { return (transform.position - previousPosition).magnitude; }
     }
 
+    public bool SafeFromSpikes { get { return currentState.SafeFromSpikes; } }
+
     private void Start()
     {
         // Setup the singleton

@@ -18,3 +18,4 @@ MonoBehaviour:
   looping: 0
   duration: 0.4
   animationName: Artemis_Idle
+  _safeFromSpikes: 1

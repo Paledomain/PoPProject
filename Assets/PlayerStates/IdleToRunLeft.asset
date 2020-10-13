@@ -19,5 +19,6 @@ MonoBehaviour:
   looping: 0
   duration: 0.35
   animationName: Artemis_IdleToRun
+  _safeFromSpikes: 0
   interruptTime: 0.3
   interruptState: {fileID: 11400000, guid: 3498d6e3e39b9764da92f6155b2ea72f, type: 2}

@@ -17,3 +17,4 @@ MonoBehaviour:
   looping: 1
   duration: 1
   animationName: Artemis_DeathBySpike
+  _safeFromSpikes: 1

@@ -40,6 +40,8 @@ public abstract class PlayerState : ScriptableObject
     protected float duration = 1.0f;
     [SerializeField]
     private string animationName;
+    [SerializeField]
+    private bool _safeFromSpikes = false;
 
     private List<KeyBindToState> keyBinds;
     protected Animator animator;
@@ -77,6 +79,8 @@ public abstract class PlayerState : ScriptableObject
             return buttons;
         }
     }
+
+    public bool SafeFromSpikes { get { return _safeFromSpikes; } }
 
     public void StartState(Animator animatorArg, PlayerState previousState)
     {

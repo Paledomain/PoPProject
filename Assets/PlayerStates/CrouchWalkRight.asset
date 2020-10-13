@@ -19,4 +19,5 @@ MonoBehaviour:
   looping: 1
   duration: 1
   animationName: Artemis_CrouchWalk
+  _safeFromSpikes: 1
   movementSpeed: 2

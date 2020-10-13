@@ -18,5 +18,6 @@ MonoBehaviour:
   looping: 0
   duration: 1
   animationName: Artemis_ClimbUp
+  _safeFromSpikes: 1
   direction: 0
   endPositionFromClimbPoint: {x: 0.3, y: 1}

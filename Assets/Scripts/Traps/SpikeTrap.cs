@@ -17,9 +17,11 @@ public class SpikeTrap : MonoBehaviour
         if (other.CompareTag("Char"))
         {
             GetComponent<Animator>().SetBool("pressed", true);
-            if (other.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Artemis_Run"))
+            if (!PlayerController.Instance.SafeFromSpikes && PlayerController.Instance.Grounded)
             {
                 PlayerHealth.Instance.ApplySpikeDamage(100);
+                // Stop immediately if spiked.
+                PlayerController.Instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
         }
     }
