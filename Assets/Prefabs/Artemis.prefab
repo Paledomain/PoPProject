@@ -404,5 +404,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  damageThreshold: 10
+  damageThreshold: 13
   healthText: {fileID: 0}
