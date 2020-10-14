@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 1147480030}
   - component: {fileID: -4620876151398656953}
   - component: {fileID: 693841328}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Artemis
   m_TagString: Char
   m_Icon: {fileID: 0}
