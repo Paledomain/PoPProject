@@ -19,9 +19,8 @@ MonoBehaviour:
   looping: 0
   duration: 1
   animationName: Artemis_JumpUp
+  _safeFromSpikes: 0
   interruptTime: 0.3
   interruptState: {fileID: 11400000, guid: 3498d6e3e39b9764da92f6155b2ea72f, type: 2}
   preparationDuration: 0.3
-  firstAnimDuration: 0.52
-  secondAnimationName: Artemis_JumpUpAir
   impulse: {x: -10, y: 215}
