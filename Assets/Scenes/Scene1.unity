@@ -4667,7 +4667,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997067986}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 76d6d14db5e292048b75aa6ade8e2d75, type: 2}
   m_IsTrigger: 0
@@ -9985,6 +9985,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 4875677419991513555, guid: 5cefbcc30c3abeb4093017db44495067, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875677419991513555, guid: 5cefbcc30c3abeb4093017db44495067, type: 3}
+      propertyPath: m_Size.x
+      value: 0.46440977
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cefbcc30c3abeb4093017db44495067, type: 3}
 --- !u!1001 &2129095672
@@ -10066,11 +10074,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657525210671492275, guid: bf69f76897c606842816e53895d34bd8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.12
+      value: -14.53
       objectReference: {fileID: 0}
     - target: {fileID: 8657525210671492275, guid: bf69f76897c606842816e53895d34bd8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 8657525210671492275, guid: bf69f76897c606842816e53895d34bd8, type: 3}
       propertyPath: m_LocalPosition.z
