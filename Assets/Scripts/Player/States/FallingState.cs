@@ -9,8 +9,8 @@ public class FallingState : PlayerState
     PlayerState highSpeedRecoveryState;
     [SerializeField]
     float highSpeedThreshold = 10.0f;
-    [SerializeField]
-    float deadlySpeedThreshold = 40.0f;
+
+    float fallStartY;
 
     protected override void CustomStartState()
     {
@@ -19,13 +19,16 @@ public class FallingState : PlayerState
         {
             Debug.LogWarning("You should define falling recovery states.");
         }
+        fallStartY = PlayerHealth.Instance.transform.position.y;
     }
 
     protected override void CustomStateUpdate()
     {
         if (PlayerController.Instance.Grounded)
         {
-            bool highSpeedFall = PlayerController.Instance.PureVelocitySquared > highSpeedThreshold * highSpeedThreshold;
+            PlayerHealth.Instance.ApplyFallDamage(fallStartY - PlayerHealth.Instance.transform.position.y);
+            bool highSpeedFall = PlayerController.Instance.GetComponent<Rigidbody2D>().velocity.sqrMagnitude > 
+                highSpeedThreshold * highSpeedThreshold;
             PlayerController.Instance.ChangeState(highSpeedFall ? highSpeedRecoveryState : lowSpeedRecoveryState);
         }
     }

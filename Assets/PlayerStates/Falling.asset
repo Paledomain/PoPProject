@@ -17,7 +17,7 @@ MonoBehaviour:
   looping: 1
   duration: 1
   animationName: Artemis_Falling
-  lowSpeedRecoveryState: {fileID: 11400000, guid: 55cbb1af3952ab74195a9381b584e396, type: 2}
+  _safeFromSpikes: 0
+  lowSpeedRecoveryState: {fileID: 11400000, guid: 8288bb93662bc4443a30bfc4ab1c624e, type: 2}
   highSpeedRecoveryState: {fileID: 11400000, guid: 55cbb1af3952ab74195a9381b584e396, type: 2}
-  highSpeedThreshold: 10
-  deadlySpeedThreshold: 40
+  highSpeedThreshold: 13
