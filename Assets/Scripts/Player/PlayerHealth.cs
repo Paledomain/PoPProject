@@ -13,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
     private PlayerHealthText healthText;
 
     private Rigidbody2D rigidBodyComponent;
-    private bool damageWhenStop = false;
 
     public static PlayerHealth Instance { get; private set; }
 
@@ -41,16 +40,10 @@ public class PlayerHealth : MonoBehaviour
         rigidBodyComponent = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void ApplyFallDamage(float fallHeight)
     {
-        if (rigidBodyComponent.velocity.sqrMagnitude > damageThreshold * damageThreshold)
+        if (fallHeight > damageThreshold)
         {
-            damageWhenStop = true;
-        }
-        else if (damageWhenStop && PlayerController.Instance.Grounded)
-        {
-            damageWhenStop = false;
             if (--Health == 0)
             {
                 PlayerController.Instance.Die(DeathType.Fall);
