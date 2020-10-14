@@ -22,7 +22,7 @@ public class PressurePlate : MonoBehaviour
     {
         if (!connectedGate)
         {
-            Debug.LogWarning("Missing the animator to trigger.");
+            Debug.LogWarning("No connected gate for a pressure plate.");
             return;
         }
 
