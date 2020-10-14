@@ -3548,8 +3548,8 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.2688679, g: 0.33849946, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.27058828, g: 0.33829206, b: 1, a: 1}
+  m_Intensity: 0.55
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 000000001dcaf12655f184619d21aa87
   m_LightCookieSprite: {fileID: 0}
@@ -9985,6 +9985,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 4875677419991513554, guid: 5cefbcc30c3abeb4093017db44495067, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 4875677419991513555, guid: 5cefbcc30c3abeb4093017db44495067, type: 3}
       propertyPath: m_Offset.x
       value: 0.01
