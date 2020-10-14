@@ -1,26 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6978a0d83990e5741923e7db8f9b8781, type: 3}
-  m_Name: JumpUpLeft
-  m_EditorClassIdentifier: 
-  possibleNextStates:
-  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
-  - {fileID: 11400000, guid: 4c1daacd92b40ea459fcd4e62f5cd240, type: 2}
-  buttons: 02000000
-  looping: 0
-  duration: 1
-  animationName: Artemis_JumpUp
-  _safeFromSpikes: 0
-  interruptTime: 0.3
-  interruptState: {fileID: 11400000, guid: 3498d6e3e39b9764da92f6155b2ea72f, type: 2}
-  preparationDuration: 0.3
-  impulse: {x: -10, y: 215}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d68079688ef894c51ca3174e236e21297cceac3e3d37bd5d0944d0a33c4743be
+size 853

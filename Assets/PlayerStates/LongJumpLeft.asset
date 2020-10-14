@@ -1,21 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af675e73651b6d546b75136ed372f83a, type: 3}
-  m_Name: LongJumpLeft
-  m_EditorClassIdentifier: 
-  possibleNextStates:
-  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
-  buttons: 0200000000000000
-  looping: 0
-  duration: 1
-  animationName: Artemis_Jump
-  defaultJumpForce: {x: -300, y: 160}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e5430b1ddceaec99631f39ec02c832e9fd64e2fdfa893e4538d58bfe5a9da78c
+size 639

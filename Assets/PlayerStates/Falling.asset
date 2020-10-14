@@ -1,23 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca41f50ccf47e748838169c69fbf0e9, type: 3}
-  m_Name: Falling
-  m_EditorClassIdentifier: 
-  possibleNextStates: []
-  buttons: 
-  looping: 1
-  duration: 1
-  animationName: Artemis_Falling
-  lowSpeedRecoveryState: {fileID: 11400000, guid: 55cbb1af3952ab74195a9381b584e396, type: 2}
-  highSpeedRecoveryState: {fileID: 11400000, guid: 55cbb1af3952ab74195a9381b584e396, type: 2}
-  highSpeedThreshold: 10
-  deadlySpeedThreshold: 40
+version https://git-lfs.github.com/spec/v1
+oid sha256:37a402fbd6d73c56a80ca6e584f0de1108d8053e27129dab0f18149e653737bf
+size 732

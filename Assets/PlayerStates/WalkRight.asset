@@ -1,25 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4773f4aec05824b8789c767a85c869, type: 3}
-  m_Name: WalkRight
-  m_EditorClassIdentifier: 
-  possibleNextStates:
-  - {fileID: 11400000, guid: 52964312494bf5d4998db9c4baee572d, type: 2}
-  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
-  - {fileID: 11400000, guid: fea394f49ba160b4da5e350145f3b507, type: 2}
-  buttons: 0400000001000000
-  looping: 1
-  duration: 1
-  animationName: Artemis_Walk
-  _safeFromSpikes: 1
-  movementSpeed: 1.8
-  jumpForceFromState: {x: 0, y: 0}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9dc45fb613bcea691dd99df59930505b01963b258e8fcc5c4770a0e3e9e8c5b0
+size 823

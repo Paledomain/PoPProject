@@ -1,22 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6a57c5a1da5414da8d500fe0a6ab03, type: 3}
-  m_Name: JumpUpOrientationSelector
-  m_EditorClassIdentifier: 
-  possibleNextStates: []
-  buttons: 02000000
-  looping: 0
-  duration: 1
-  animationName: 
-  _safeFromSpikes: 1
-  leftVariation: {fileID: 11400000, guid: 6011072cfc9812c42b2ff776dc8ed857, type: 2}
-  rightVariation: {fileID: 11400000, guid: 58b3e4097ea6fcb43914d4ec559bf3ed, type: 2}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9e97dcfca61ad533fb07a1ffab2d290fc77b086514f6572acb60b71815d03fa9
+size 718

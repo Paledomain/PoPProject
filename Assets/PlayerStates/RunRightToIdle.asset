@@ -1,20 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d83cbe05198d1408d48266c04c848d, type: 3}
-  m_Name: RunRightToIdle
-  m_EditorClassIdentifier: 
-  possibleNextStates:
-  - {fileID: 11400000, guid: 3119d43d0c7f4d54eaf2b55f2abc5ca7, type: 2}
-  buttons: 
-  looping: 0
-  duration: 0.6
-  animationName: Artemis_RunToIdleSkid
+version https://git-lfs.github.com/spec/v1
+oid sha256:48f969d2295efe66e84d16b2ae25430edbac53909a050b93b3748cc0c56ce498
+size 577
