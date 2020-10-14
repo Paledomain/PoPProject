@@ -10750,14 +10750,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VerticalBladeTrap
       objectReference: {fileID: 0}
-    - target: {fileID: 5484220753342485209, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -2018893411
-      objectReference: {fileID: 0}
-    - target: {fileID: 5484220753342485209, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
 --- !u!4 &5870464605418730106 stripped
@@ -10765,30 +10757,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2786283584488566973, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
   m_PrefabInstance: {fileID: 5870464605418730105}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5870464605418730107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845309646984864897, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
-  m_PrefabInstance: {fileID: 5870464605418730105}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5870464605418730108
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5870464605418730107}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 131c6fbb22cf14a4c80bb549f0f31c53, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7653391956141167363
 PrefabInstance:
   m_ObjectHideFlags: 0

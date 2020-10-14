@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void ApplySpikeDamage(int damage)
+    public void ApplyTrapDamage(int damage)
     {
         Health -= damage;
         if (health == 0)

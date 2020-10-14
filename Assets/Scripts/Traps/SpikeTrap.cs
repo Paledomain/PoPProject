@@ -19,7 +19,7 @@ public class SpikeTrap : MonoBehaviour
             GetComponent<Animator>().SetBool("pressed", true);
             if (!PlayerController.Instance.SafeFromSpikes && PlayerController.Instance.Grounded)
             {
-                PlayerHealth.Instance.ApplySpikeDamage(100);
+                PlayerHealth.Instance.ApplyTrapDamage(100);
                 // Stop immediately if spiked.
                 PlayerController.Instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
