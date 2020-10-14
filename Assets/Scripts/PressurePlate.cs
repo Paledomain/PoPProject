@@ -8,6 +8,9 @@ public class PressurePlate : MonoBehaviour
     [SerializeField]
     private Gate connectedGate;
 
+    [SerializeField]
+    private bool isAntiPressurePlate = false;
+
     private Animator animator;
 
     private void Start()
@@ -25,7 +28,13 @@ public class PressurePlate : MonoBehaviour
 
         if (collision.CompareTag("Char"))
         {
-            connectedGate.OnPressurePlatePressed();
+            if (!isAntiPressurePlate)
+            {
+                connectedGate.OnPressurePlatePressed();
+            }
+            else
+                connectedGate.AntiPlatePressed();
+
         }
         animator.SetBool("pressed", true);
     }

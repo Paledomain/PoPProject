@@ -11,6 +11,7 @@ public class Gate : MonoBehaviour
 
     private Animator animator;
     private float plateUnpressedTime = -1.0f;
+    private bool antiPlatePressed = false;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class Gate : MonoBehaviour
 
     private void Update()
     {
-        if (plateUnpressedTime > 0.0f && Time.time - plateUnpressedTime > openDuration)
+        if (plateUnpressedTime > 0.0f && Time.time - plateUnpressedTime > openDuration  || antiPlatePressed)
         {
             TryCloseGate();
         }
@@ -49,6 +50,12 @@ public class Gate : MonoBehaviour
 
     public void OnPressurePlateUnPressed()
     {
+        antiPlatePressed = false;
         plateUnpressedTime = Time.time;
+    }
+
+    public void AntiPlatePressed()
+    {
+        antiPlatePressed = true;
     }
 }
