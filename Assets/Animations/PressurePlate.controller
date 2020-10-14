@@ -93,9 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4f48f952730a64eafc498c42bd2313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMultiple: 0
+  useMultiple: 1
   clip: {fileID: 8300000, guid: 0a256a2d841be428680a03c5ab82025c, type: 3}
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: ced25fc21869e4c50894a8c7cecf69ba, type: 3}
+  - {fileID: 8300000, guid: fbefd86de61e1422e89a38980aaed91d, type: 3}
   condition: 0
   delayer:
     delayType: 0
