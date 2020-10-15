@@ -20,5 +20,6 @@ MonoBehaviour:
   looping: 1
   duration: 1
   animationName: Artemis_Run
+  _safeFromSpikes: 0
   movementSpeed: 6
-  jumpForceFromState: {x: 500, y: 160}
+  jumpForceFromState: {x: 650, y: 200}
