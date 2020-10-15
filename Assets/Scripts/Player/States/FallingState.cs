@@ -27,9 +27,12 @@ public class FallingState : PlayerState
         if (PlayerController.Instance.Grounded)
         {
             PlayerHealth.Instance.ApplyFallDamage(fallStartY - PlayerHealth.Instance.transform.position.y);
-            bool highSpeedFall = PlayerController.Instance.GetComponent<Rigidbody2D>().velocity.sqrMagnitude > 
-                highSpeedThreshold * highSpeedThreshold;
-            PlayerController.Instance.ChangeState(highSpeedFall ? highSpeedRecoveryState : lowSpeedRecoveryState);
+            if (!PlayerController.Instance.Dead)
+            {
+                bool highSpeedFall = PlayerController.Instance.GetComponent<Rigidbody2D>().velocity.sqrMagnitude >
+                                highSpeedThreshold * highSpeedThreshold;
+                PlayerController.Instance.ChangeState(highSpeedFall ? highSpeedRecoveryState : lowSpeedRecoveryState);
+            }
         }
     }
 }

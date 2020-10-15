@@ -25,11 +25,16 @@ public class PlayerController : MonoBehaviour
     private PlayerState fallDeathState;
     [SerializeField]
     private PlayerGroundChecker groundChecker;
+    [SerializeField]
+    private PhysicsMaterial2D groundedMaterial;
+    [SerializeField]
+    private PhysicsMaterial2D fallingMaterial;
     
     private Animator animator;
     private PlayerState previousState;
     private PlayerState currentState;
     private Vector3 previousPosition;
+    private Collider2D colliderComponent;
 
     // How many frames the transform should move to other direction before mirroring? This is to avoid flickering.
     int framesUntilMirror = 5;
@@ -86,6 +91,7 @@ public class PlayerController : MonoBehaviour
         }
 
         animator = GetComponent<Animator>();
+        colliderComponent = GetComponent<Collider2D>();
 
         if (!FindObjectOfType<InputMapper>())
         {
@@ -120,12 +126,22 @@ public class PlayerController : MonoBehaviour
         {
             DelayedSetMirror(false, true);
         }
+
         currentState.UpdateState();
         previousPosition = transform.position;
     }
 
     private void FixedUpdate()
     {
+        if (Grounded && colliderComponent.sharedMaterial != groundedMaterial)
+        {
+            colliderComponent.sharedMaterial = groundedMaterial;
+        }
+        else if (!Grounded && colliderComponent != fallingMaterial)
+        {
+            colliderComponent.sharedMaterial = fallingMaterial;
+        }
+
         currentState.FixedUpdateState();
     }
 

@@ -12,4 +12,9 @@ public class CrouchState : PlayerState
     protected override void CustomStateUpdate()
     {
     }
+
+    protected override bool IgnoreState()
+    {
+        return !PlayerController.Instance.Grounded;
+    }
 }

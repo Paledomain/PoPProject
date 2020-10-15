@@ -43,7 +43,7 @@ public class UnevenFloor : MonoBehaviour
 
     void Drop()
     {
-        gameObject.layer = 10;
+        GetComponent<Collider2D>().enabled = false;
         // Scale so it doesn't get stuck on the edges.
         transform.localScale *= 0.95f;
         if (rigidBody)

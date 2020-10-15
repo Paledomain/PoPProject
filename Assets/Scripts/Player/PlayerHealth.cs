@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private float damageThreshold = 10.0f;
     [SerializeField]
+    private float deathThreshold = 16.0f;
+    [SerializeField]
     private PlayerHealthText healthText;
 
     private Rigidbody2D rigidBodyComponent;
@@ -42,12 +44,19 @@ public class PlayerHealth : MonoBehaviour
 
     public void ApplyFallDamage(float fallHeight)
     {
-        if (fallHeight > damageThreshold)
+        Debug.Log("Fall height: " + fallHeight);
+        if (fallHeight > deathThreshold)
         {
-            if (--Health == 0)
-            {
-                PlayerController.Instance.Die(DeathType.Fall);
-            }
+            Health -= 100;
+        }
+        else if (fallHeight > damageThreshold)
+        {
+            --Health;
+        }
+
+        if (Health == 0)
+        {
+            PlayerController.Instance.Die(DeathType.Fall);
         }
     }
 

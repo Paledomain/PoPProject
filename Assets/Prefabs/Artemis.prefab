@@ -211,7 +211,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.69}
-  m_Size: {x: 0.81, y: 1.62}
+  m_Size: {x: 0.62, y: 1.65}
   m_Direction: 0
 --- !u!114 &4199651827144947438
 MonoBehaviour:
@@ -466,6 +466,8 @@ MonoBehaviour:
   trapDeathState: {fileID: 11400000, guid: 9f01f48445308df4ca7ab50fd8399f0f, type: 2}
   fallDeathState: {fileID: 11400000, guid: 563398c636692f54a9a26ace165ce5c8, type: 2}
   groundChecker: {fileID: 4199651827144947438}
+  groundedMaterial: {fileID: 6200000, guid: 700923f95e3caf94e856560412c712e3, type: 2}
+  fallingMaterial: {fileID: 6200000, guid: 7dbae191c0914b442981e67c4a053fd2, type: 2}
 --- !u!114 &1147480030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,7 +481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  damageThreshold: 13
+  damageThreshold: 8
+  deathThreshold: 13
   healthText: {fileID: 0}
 --- !u!82 &-4620876151398656953
 AudioSource:

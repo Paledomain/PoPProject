@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a4cadb3efcaf0b4d85eb6a2e05e034e, type: 2}
   - {fileID: 11400000, guid: d73d457699318094b84d518391ff4857, type: 2}
   - {fileID: 11400000, guid: ef845dc8e2ad7604786be09ef80e050a, type: 2}
+  - {fileID: 11400000}
   buttons: 03000000
   looping: 1
   duration: 1
