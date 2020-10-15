@@ -44,7 +44,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void ApplyFallDamage(float fallHeight)
     {
-        Debug.Log("Fall height: " + fallHeight);
         if (fallHeight > deathThreshold)
         {
             Health -= 100;

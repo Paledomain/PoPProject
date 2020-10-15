@@ -210,6 +210,13 @@ public class PlayerController : MonoBehaviour
                 ChangeState(fallDeathState);
                 break;
         }
+
+        Invoke("ShowDeathScreen", 3.5f);
+    }
+
+    private void ShowDeathScreen()
+    {
+        LevelEnd.Instance.ShowEndScreen(GameManager.Instance.GameTime, false, false);
     }
 
     private void DelayedSetMirror(bool mirror, bool ignoreFirstParam = false)
