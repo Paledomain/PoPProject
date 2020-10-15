@@ -3509,6 +3509,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.008099675
       objectReference: {fileID: 0}
+    - target: {fileID: 7681529121098498044, guid: 0e2ba047595c1af4180be9db43e17e0e, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e2ba047595c1af4180be9db43e17e0e, type: 3}
 --- !u!1001 &242765223

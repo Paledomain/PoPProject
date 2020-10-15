@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4f48f952730a64eafc498c42bd2313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMultiple: 1
+  useMultiple: 0
   clip: {fileID: 8300000, guid: 4c7d64a7aee08448a93df84dcb84d4e4, type: 3}
   clips:
   - {fileID: 8300000, guid: 4c7d64a7aee08448a93df84dcb84d4e4, type: 3}
