@@ -5860,7 +5860,7 @@ PrefabInstance:
       objectReference: {fileID: 787972579}
     - target: {fileID: 1147480030, guid: 9bc144c99611b674885ce8264044773c, type: 3}
       propertyPath: damageThreshold
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6281145505126775505, guid: 9bc144c99611b674885ce8264044773c, type: 3}
       propertyPath: m_Name
@@ -11244,7 +11244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875677419991513555, guid: 5cefbcc30c3abeb4093017db44495067, type: 3}
       propertyPath: m_Size.x
-      value: 1.6327959
+      value: 0.69336736
       objectReference: {fileID: 0}
     - target: {fileID: 4875677419991513555, guid: 5cefbcc30c3abeb4093017db44495067, type: 3}
       propertyPath: m_Offset.y
