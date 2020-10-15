@@ -6128,6 +6128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 693841328, guid: 9bc144c99611b674885ce8264044773c, type: 3}
+      propertyPath: m_Volume
+      value: 0.69
+      objectReference: {fileID: 0}
     - target: {fileID: 1147480030, guid: 9bc144c99611b674885ce8264044773c, type: 3}
       propertyPath: healthText
       value: 
