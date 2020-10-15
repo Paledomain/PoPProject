@@ -4001,7 +4001,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5870464605418730109, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
       propertyPath: closeInterval
-      value: 1.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730109, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: closedTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730110, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730110, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
@@ -18331,6 +18343,10 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730110, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
 --- !u!1 &1152404020
@@ -26640,6 +26656,14 @@ PrefabInstance:
       propertyPath: closedTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730109, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: closeInterval
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730110, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
 --- !u!1001 &1553485480
@@ -34740,6 +34764,14 @@ PrefabInstance:
     - target: {fileID: 5484220753342485209, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730109, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: closeInterval
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870464605418730110, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a86ef102602245449c7f08bd79a944e, type: 3}

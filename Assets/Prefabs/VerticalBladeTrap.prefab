@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5484220753342485209}
   - component: {fileID: 8505188001137462616}
   - component: {fileID: 5870464605418730110}
-  - component: {fileID: 5870464605418730108}
   - component: {fileID: 5870464605418730109}
   m_Layer: 0
   m_Name: VerticalBladeTrap
@@ -244,25 +243,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 3.22}
   m_EdgeRadius: 0
---- !u!95 &5870464605418730108
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4845309646984864897}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 131c6fbb22cf14a4c80bb549f0f31c53, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5870464605418730109
 MonoBehaviour:
   m_ObjectHideFlags: 0
