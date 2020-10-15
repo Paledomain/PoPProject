@@ -17,11 +17,17 @@ public class SpikeTrap : MonoBehaviour
         if (other.CompareTag("Char"))
         {
             GetComponent<Animator>().SetBool("pressed", true);
-            if (!PlayerController.Instance.SafeFromSpikes && PlayerController.Instance.Grounded)
+            if (!PlayerController.Instance.SafeFromSpikes || !PlayerController.Instance.Grounded)
             {
                 PlayerHealth.Instance.ApplyTrapDamage(100);
                 // Stop immediately if spiked.
                 PlayerController.Instance.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                PlayerController.Instance.GetComponent<Animator>().enabled = false;
+                // PlayerController.Instance.GetComponent<Transform>().position += Vector3.down * Time.deltaTime;
+                if (PlayerController.Instance.Grounded)
+                {
+                    PlayerController.Instance.GetComponent<Rigidbody2D>().isKinematic = true;
+                }
             }
         }
     }
