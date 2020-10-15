@@ -2,6 +2,7 @@
 
 namespace BrightLib.Animation.Runtime
 {
+#if UNITY_EDITOR
     [CustomEditor(typeof(PlayAudioClip))]
     [CanEditMultipleObjects]
     public class PlayAudioClipEditor : Editor
@@ -53,4 +54,5 @@ namespace BrightLib.Animation.Runtime
 
         }
     }
+#endif
 }
